@@ -206,8 +206,77 @@
 }
 
   </style>
+  <style>
+      /* Spinner Overlay */
+.spinner-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.spinner-box {
+  background: white;
+  border-radius: 20px;
+  padding: 1.5rem;
+  width: 90%;
+  max-width: 320px;
+  text-align: center;
+}
+
+.spinner-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.spinner-wheel {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  margin: 0 auto 1rem;
+  background: conic-gradient(
+    #ff4d4d 0deg 60deg,
+    #ffb84d 60deg 120deg,
+    #4dd2ff 120deg 180deg,
+    #7dff4d 180deg 240deg,
+    #b84dff 240deg 300deg,
+    #ff4da6 300deg 360deg
+  );
+  transition: transform 4s cubic-bezier(.17,.67,.32,1.34);
+}
+
+.spinner-pointer {
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-bottom: 18px solid #333;
+  margin: 0 auto 10px;
+}
+
+.spinner-result {
+  font-weight: 600;
+  margin-top: 1rem;
+}
+
+.spinner-close {
+  margin-top: 1rem;
+  background: var(--accent);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: .5rem 1.2rem;
+  cursor: pointer;
+}
+
+  </style>
+  
 </head>
 <body>
+    
 
 <header>
   <div class="logo">fidgit.</div>
@@ -310,6 +379,54 @@
 <footer>
   © 2026 Fidgit. ყველა უფლება დაცულია.
 </footer>
+
+<div class="spinner-overlay" id="spinner">
+  <div class="spinner-box">
+    <div class="spinner-title">დაატრიალე და მოიგე 🎉</div>
+
+    <div class="spinner-pointer"></div>
+    <div class="spinner-wheel" id="wheel"></div>
+
+    <div class="spinner-result" id="result"></div>
+
+    <button class="spinner-close" onclick="closeSpinner()">
+      დახურვა
+    </button>
+  </div>
+</div>
+<script>
+  const wheel = document.getElementById("wheel");
+  const result = document.getElementById("result");
+
+  const prizes = [
+    "🎁 5% ფასდაკლება",
+    "🔥 10% ფასდაკლება",
+    "💥 15% ფასდაკლება",
+    "😔 სცადე კიდევ",
+    "🎉 20% ფასდაკლება",
+    "🎈 უფასო მიწოდება"
+  ];
+
+  window.onload = () => {
+    setTimeout(spinWheel, 500);
+  };
+
+  function spinWheel() {
+    const randomDegree = 360 * 5 + Math.floor(Math.random() * 360);
+    const prizeIndex = Math.floor((randomDegree % 360) / 60);
+
+    wheel.style.transform = `rotate(${randomDegree}deg)`;
+
+    setTimeout(() => {
+      result.textContent = prizes[5 - prizeIndex];
+    }, 4000);
+  }
+
+  function closeSpinner() {
+    document.getElementById("spinner").style.display = "none";
+  }
+</script>
+
 
 </body>
 </html>
