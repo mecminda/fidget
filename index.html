@@ -177,6 +177,34 @@
       color: var(--text-muted);
       font-size: .85rem;
     }
+
+    .sale-price {
+      color: red; /* text color */
+      text-decoration-line: line-through; /* line through middle of text */
+      text-decoration-color: red; /* line color */
+      text-decoration-thickness: 2px; /* thickness of line */
+    }
+
+    .insta-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 0.45rem 0.9rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+.insta-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: white;
+}
+
   </style>
 </head>
 <body>
@@ -203,38 +231,78 @@
 
 <section class="products">
   <div class="product">
-    <img src="https://via.placeholder.com/300x260" />
+    <img src="https://f01dba66-5c9e-488a-80b7-24dcf22f514a.lovableproject.com/src/assets/fidget-spinner.png" />
     <div class="product-info">
       <h3>Spin Joy</h3>
       <p>დაუღალავი ბრუნვის თერაპია</p>
     </div>
     <div class="price-row">
-      <span>$24</span>
-      <button class="msg-btn">შეტყობინება</button>
+      <div>
+        <span class="sale-price">67 ₾</span>
+        <span>27 ₾</span>
+      </div>
+      <a
+  class="insta-btn"
+  href="https://www.instagram.com/direct/t/USERNAME/"
+  target="_blank"
+>
+  <svg viewBox="0 0 24 24">
+    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
+  </svg>
+  Instagram
+</a>
+
     </div>
   </div>
 
   <div class="product">
-    <img src="https://via.placeholder.com/300x260" />
+    <img src="https://f01dba66-5c9e-488a-80b7-24dcf22f514a.lovableproject.com/src/assets/fidget-cube.png" />
     <div class="product-info">
       <h3>Zen Cube</h3>
       <p>გეომეტრიული სიმშვიდე</p>
     </div>
     <div class="price-row">
-      <span>$28</span>
-      <button class="msg-btn">შეტყობინება</button>
+      <div>
+        <span class="sale-price">85 ₾</span>
+        <span>15 ₾</span>
+      </div>
+     <a
+  class="insta-btn"
+  href="https://www.instagram.com/direct/t/USERNAME/"
+  target="_blank"
+>
+  <svg viewBox="0 0 24 24">
+    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
+  </svg>
+  Instagram
+</a>
+
     </div>
   </div>
 
   <div class="product">
-    <img src="https://via.placeholder.com/300x260" />
+    <img src="https://f01dba66-5c9e-488a-80b7-24dcf22f514a.lovableproject.com/src/assets/infinity-cube.png" />
     <div class="product-info">
       <h3>Infinity Loop</h3>
       <p>უსასრულო დაკმაყოფილება</p>
     </div>
     <div class="price-row">
-      <span>$32</span>
-      <button class="msg-btn">შეტყობინება</button>
+      <div>
+        <span class="sale-price">99 ₾</span>
+        <span>39 ₾</span>
+      </div>
+      
+      <a
+  class="insta-btn"
+  href="https://www.instagram.com/direct/t/USERNAME/"
+  target="_blank"
+>
+  <svg viewBox="0 0 24 24">
+    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
+  </svg>
+  Instagram
+</a>
+
     </div>
   </div>
 </section>
