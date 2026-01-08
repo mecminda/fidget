@@ -1,432 +1,424 @@
 <!DOCTYPE html>
 <html lang="ka">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MecMinda</title>
-  <style>
-    :root {
-      --accent: #ff8a4c;
-      --text-dark: #1b1b1b;
-      --text-muted: #7a7a7a;
-      --bg: #fcf9f5;
-      --radius: 20px;
-      --shadow: 0 8px 32px rgba(0,0,0,0.06);
-    }
-    body {
-      margin: 0;
-      font-family: system-ui, sans-serif;
-      background: var(--bg);
-      color: var(--text-dark);
-      line-height: 1.5;
-    }
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MecMinda</title>
+    <style>
+      :root {
+        --accent: #ff8a4c;
+        --text-dark: #1b1b1b;
+        --text-muted: #7a7a7a;
+        --bg: #fcf9f5;
+        --radius: 20px;
+        --shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
+      }
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text-dark);
+        line-height: 1.5;
+      }
 
-    header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 2rem 3rem;
-    }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 3rem;
+      }
 
-    .logo {
-      font-weight: 700;
-      font-size: 1.4rem;
-      color: var(--accent);
-    }
+      .logo {
+        font-weight: 700;
+        font-size: 1.4rem;
+        color: var(--accent);
+      }
 
-    .follow-btn {
-      border: 1px solid rgba(0,0,0,0.15);
-      border-radius: 30px;
-      padding: .45rem 1rem;
-      font-size: .9rem;
-      background: white;
-    }
+      .follow-btn {
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        border-radius: 30px;
+        padding: 0.45rem 1rem;
+        font-size: 0.9rem;
+        background: white;
+      }
 
-    .hero {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 6rem 2rem 4rem;
-    }
+      .hero {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 6rem 2rem 4rem;
+      }
 
-    .tag {
-      background: rgba(255,138,76,0.15);
-      color: var(--accent);
-      padding: .3rem .8rem;
-      border-radius: 999px;
-      font-size: .8rem;
-      margin-bottom: 1rem;
-      display: inline-block;
-    }
+      .tag {
+        background: rgba(255, 138, 76, 0.15);
+        color: var(--accent);
+        padding: 0.3rem 0.8rem;
+        border-radius: 999px;
+        font-size: 0.8rem;
+        margin-bottom: 1rem;
+        display: inline-block;
+      }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      font-weight: 800;
-      margin: 0;
-    }
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 800;
+        margin: 0;
+      }
 
-    .hero h1 span {
-      color: var(--accent);
-      display: block;
-    }
+      .hero h1 span {
+        color: var(--accent);
+        display: block;
+      }
 
-    .hero p {
-      color: var(--text-muted);
-      margin: 1rem 0 2rem;
-      font-size: 1.1rem;
-    }
+      .hero p {
+        color: var(--text-muted);
+        margin: 1rem 0 2rem;
+        font-size: 1.1rem;
+      }
 
-    .btn-row {
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-    }
+      .btn-row {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+      }
 
-    .btn {
-      padding: .9rem 1.6rem;
-      border-radius: 30px;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+      .btn {
+        padding: 0.9rem 1.6rem;
+        border-radius: 30px;
+        border: none;
+        cursor: pointer;
+        font-size: 1rem;
+      }
 
-    .btn-primary {
-      background: var(--accent);
-      color: white;
-      box-shadow: var(--shadow);
-    }
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+        box-shadow: var(--shadow);
+      }
 
-    .btn-secondary {
-      background: white;
-      border: 1px solid rgba(0,0,0,0.1);
-    }
+      .btn-secondary {
+        background: white;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
 
-    .section-title {
-      text-align: center;
-      margin-top: 4rem;
-    }
+      .section-title {
+        text-align: center;
+        margin-top: 4rem;
+      }
 
-    .section-title h2 {
-      font-size: 2rem;
-      margin: 0 0 .5rem;
-    }
+      .section-title h2 {
+        font-size: 2rem;
+        margin: 0 0 0.5rem;
+      }
 
-    .section-title p {
-      color: var(--text-muted);
-      margin: 0;
-    }
+      .section-title p {
+        color: var(--text-muted);
+        margin: 0;
+      }
 
-    .products {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2.5rem;
-      padding: 4rem 2rem;
-    }
+      .products {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2.5rem;
+        padding: 4rem 2rem;
+      }
 
-    .product {
-      width: 300px;
-      background: white;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-      overflow: hidden;
-      padding-bottom: 1.5rem;
-    }
+      .product {
+        width: 300px;
+        background: white;
+        border-radius: var(--radius);
+        box-shadow: var(--shadow);
+        overflow: hidden;
+        padding-bottom: 1.5rem;
+      }
 
-    .product img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-    }
+      .product img {
+        width: 100%;
+        height: 260px;
+        object-fit: cover;
+      }
 
-    .product-info {
-      padding: 1.5rem;
-    }
+      .product-info {
+        padding: 1.5rem;
+      }
 
-    .product h3 {
-      margin: 0 0 .4rem;
-      font-size: 1.2rem;
-    }
+      .product h3 {
+        margin: 0 0 0.4rem;
+        font-size: 1.2rem;
+      }
 
-    .product p {
-      margin: 0 0 .8rem;
-      color: var(--text-muted);
-      font-size: .9rem;
-    }
+      .product p {
+        margin: 0 0 0.8rem;
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
 
-    .price-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 1.5rem;
-    }
+      .price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 1.5rem;
+      }
 
-    .msg-btn {
-      border: none;
-      background: var(--accent);
-      color: white;
-      border-radius: 30px;
-      padding: .5rem 1rem;
-      cursor: pointer;
-      font-size: .9rem;
-    }
+      .msg-btn {
+        border: none;
+        background: var(--accent);
+        color: white;
+        border-radius: 30px;
+        padding: 0.5rem 1rem;
+        cursor: pointer;
+        font-size: 0.9rem;
+      }
 
-    footer {
-      text-align: center;
-      padding: 3rem;
-      color: var(--text-muted);
-      font-size: .85rem;
-    }
+      footer {
+        text-align: center;
+        padding: 3rem;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+      }
 
-    .sale-price {
-      color: red; /* text color */
-      text-decoration-line: line-through; /* line through middle of text */
-      text-decoration-color: red; /* line color */
-      text-decoration-thickness: 2px; /* thickness of line */
-    }
+      .sale-price {
+        color: red; /* text color */
+        text-decoration-line: line-through; /* line through middle of text */
+        text-decoration-color: red; /* line color */
+        text-decoration-thickness: 2px; /* thickness of line */
+      }
 
-    .insta-btn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: 0.45rem 0.9rem;
-  cursor: pointer;
-  font-size: 0.85rem;
-  text-decoration: none;
-}
+      .insta-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(45deg, #f58529, #dd2a7b, #8134af);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 0.45rem 0.9rem;
+        cursor: pointer;
+        font-size: 0.85rem;
+        text-decoration: none;
+      }
 
-.insta-btn svg {
-  width: 16px;
-  height: 16px;
-  fill: white;
-}
-
-  </style>
-  <style>
+      .insta-btn svg {
+        width: 16px;
+        height: 16px;
+        fill: white;
+      }
+    </style>
+    <style>
       /* Spinner Overlay */
-.spinner-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-}
+      .spinner-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 9999;
+      }
 
-.spinner-box {
-  background: white;
-  border-radius: 20px;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 320px;
-  text-align: center;
-}
+      .spinner-box {
+        background: white;
+        border-radius: 20px;
+        padding: 1.5rem;
+        width: 90%;
+        max-width: 320px;
+        text-align: center;
+      }
 
-.spinner-title {
-  font-weight: 700;
-  margin-bottom: 1rem;
-}
+      .spinner-title {
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
 
-.spinner-wheel {
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  margin: 0 auto 1rem;
-  background: conic-gradient(
-    #ff4d4d 0deg 60deg,
-    #ffb84d 60deg 120deg,
-    #4dd2ff 120deg 180deg,
-    #7dff4d 180deg 240deg,
-    #b84dff 240deg 300deg,
-    #ff4da6 300deg 360deg
-  );
-  transition: transform 4s cubic-bezier(.17,.67,.32,1.34);
-}
+      .spinner-wheel {
+        width: 220px;
+        height: 220px;
+        border-radius: 50%;
+        margin: 0 auto 1rem;
+        background: conic-gradient(
+          #ff4d4d 0deg 60deg,
+          #ffb84d 60deg 120deg,
+          #4dd2ff 120deg 180deg,
+          #7dff4d 180deg 240deg,
+          #b84dff 240deg 300deg,
+          #ff4da6 300deg 360deg
+        );
+        transition: transform 4s cubic-bezier(0.17, 0.67, 0.32, 1.34);
+      }
 
-.spinner-pointer {
-  width: 0;
-  height: 0;
-  border-left: 12px solid transparent;
-  border-right: 12px solid transparent;
-  border-bottom: 18px solid #333;
-  margin: 0 auto 10px;
-}
+      .spinner-pointer {
+        width: 0;
+        height: 0;
+        border-left: 12px solid transparent;
+        border-right: 12px solid transparent;
+        border-bottom: 18px solid #333;
+        margin: 0 auto 10px;
+      }
 
-.spinner-result {
-  font-weight: 600;
-  margin-top: 1rem;
-}
+      .spinner-result {
+        font-weight: 600;
+        margin-top: 1rem;
+      }
 
-.spinner-close {
-  margin-top: 1rem;
-  background: var(--accent);
-  color: white;
-  border: none;
-  border-radius: 30px;
-  padding: .5rem 1.2rem;
-  cursor: pointer;
-}
+      .spinner-close {
+        margin-top: 1rem;
+        background: var(--accent);
+        color: white;
+        border: none;
+        border-radius: 30px;
+        padding: 0.5rem 1.2rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">MecMinda</div>
+    </header>
 
-  </style>
-  
-</head>
-<body>
-    
-
-<header>
-  <div class="logo">MecMinda</div>
-</header>
-
-<section class="hero">
-  <h1>შენი<span>საყვარელი სათამაშო</span></h1>
-  <p>ფიჯეტები, რომლებიც ამშვიდებს გონებას და ამსუბუქებს სტრესს.</p>
-  <div class="btn-row">
-    <a href="https://www.instagram.com/mecminda.shop/">
-      <button class="btn btn-primary">ყიდვა</button>
-    </a>
-  </div>
-</section>
-
-<div class="section-title">
-  <h2>კოლექცია</h2>
-</div>
-
-<section class="products">
-  <div class="product">
-    <img src="./assets/products/beans.jpg" />
-    <div class="product-info">
-      <h3>Cklicker beans</h3>
-      <p>შენი საყვარელი კლიკერ სათამაშო</p>
-    </div>
-    <div class="price-row">
-      <div>
-        <span class="sale-price">67 ₾</span>
-        <span>27 ₾</span>
+    <section class="hero">
+      <h1>შენი<span>საყვარელი სათამაშო</span></h1>
+      <p>ფიჯეტები, რომლებიც ამშვიდებს გონებას და ამსუბუქებს სტრესს.</p>
+      <div class="btn-row">
+        <a href="https://www.instagram.com/mecminda.shop/">
+          <button class="btn btn-primary">ყიდვა</button>
+        </a>
       </div>
-      <a
-  class="insta-btn"
-  href="https://www.instagram.com/mecminda.shop/"
-  target="_blank"
->
-  <svg viewBox="0 0 24 24">
-    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
-  </svg>
-  შეუკვეთე
-</a>
+    </section>
 
+    <div class="section-title">
+      <h2>კოლექცია</h2>
     </div>
-  </div>
 
-
-
-  <div class="product">
-    <img
-      src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXE4MG84ZThjenljbjd3YXkybW8yMG1meTI0ZG9wY3o4dXdjYmh0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S6B2mMQKfd9zMDcVB1/giphy.gif" />
-    <div class="product-info">
-      <h3>Infinity Loop</h3>
-      <p>შეარჩიე სათამაშო ჩვენთან</p>
-    </div>
-    <div class="price-row">
-      <div>
-        <span class="sale-price">99 ₾</span>
-        <span>39 ₾</span>
+    <section class="products">
+      <div class="product">
+        <img src="./assets/products/beans.jpg" />
+        <div class="product-info">
+          <h3>Cklicker beans</h3>
+          <p>შენი საყვარელი კლიკერ სათამაშო</p>
+        </div>
+        <div class="price-row">
+          <div>
+            <span class="sale-price">67 ₾</span>
+            <span>27 ₾</span>
+          </div>
+          <a
+            class="insta-btn"
+            href="https://www.instagram.com/mecminda.shop/"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"
+              />
+            </svg>
+            შეუკვეთე
+          </a>
+        </div>
       </div>
-  
-      <a class="insta-btn" href="https://www.instagram.com/mecminda.shop" target="_blank">
-        <svg viewBox="0 0 24 24">
-          <path
-            d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z" />
-        </svg>
-        შეუკვეთე
-      </a>
-  
-    </div>
-  </div>
 
+      <div class="product">
+        <img
+          src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExaXE4MG84ZThjenljbjd3YXkybW8yMG1meTI0ZG9wY3o4dXdjYmh0OCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/S6B2mMQKfd9zMDcVB1/giphy.gif"
+        />
+        <div class="product-info">
+          <h3>Infinity Loop</h3>
+          <p>შეარჩიე სათამაშო ჩვენთან</p>
+        </div>
+        <div class="price-row">
+          <div>
+            <span class="sale-price">99 ₾</span>
+            <span>39 ₾</span>
+          </div>
 
-
-  <div class="product">
-    <img src="./assets/products/trees.jpg" />
-    <div class="product-info">
-      <h3>კლიკერ ნაძვისხე</h3>
-      <p>🎄</p>
-    </div>
-    <div class="price-row">
-      <div>
-        <span class="sale-price">85 ₾</span>
-        <span>15 ₾</span>
+          <a
+            class="insta-btn"
+            href="https://www.instagram.com/mecminda.shop"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"
+              />
+            </svg>
+            შეუკვეთე
+          </a>
+        </div>
       </div>
-     <a
-  class="insta-btn"
-  href="https://www.instagram.com/mecminda.shop/"
-  target="_blank"
->
-  <svg viewBox="0 0 24 24">
-    <path d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"/>
-  </svg>
-  შეუკვეთე
-</a>
 
+      <div class="product">
+        <img src="./assets/products/trees.jpg" />
+        <div class="product-info">
+          <h3>კლიკერ ნაძვისხე</h3>
+          <p>🎄</p>
+        </div>
+        <div class="price-row">
+          <div>
+            <span class="sale-price">85 ₾</span>
+            <span>15 ₾</span>
+          </div>
+          <a
+            class="insta-btn"
+            href="https://www.instagram.com/mecminda.shop/"
+            target="_blank"
+          >
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M7.75 2h8.5C19.55 2 22 4.45 22 7.75v8.5C22 19.55 19.55 22 16.25 22h-8.5C4.45 22 2 19.55 2 16.25v-8.5C2 4.45 4.45 2 7.75 2zm0 1.5C5.28 3.5 3.5 5.28 3.5 7.75v8.5c0 2.47 1.78 4.25 4.25 4.25h8.5c2.47 0 4.25-1.78 4.25-4.25v-8.5c0-2.47-1.78-4.25-4.25-4.25h-8.5zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 1.5a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-.88a1.13 1.13 0 1 1 0 2.26 1.13 1.13 0 0 1 0-2.26z"
+              />
+            </svg>
+            შეუკვეთე
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <footer>© 2026 MecMinda. ყველა უფლება დაცულია.</footer>
+
+    <div class="spinner-overlay" id="spinner">
+      <div class="spinner-box">
+        <div class="spinner-title">დაატრიალე და მოიგე 🎉</div>
+
+        <div class="spinner-pointer"></div>
+        <div class="spinner-wheel" id="wheel"></div>
+
+        <div class="spinner-result" id="result"></div>
+
+        <button class="spinner-close" onclick="closeSpinner()">დახურვა</button>
+      </div>
     </div>
-  </div>
-</section>
+    <script>
+      const wheel = document.getElementById("wheel");
+      const result = document.getElementById("result");
 
-<footer>
-  © 2026 MecMinda. ყველა უფლება დაცულია.
-</footer>
+      const prizes = [
+        "🎁 შენ მოიგე მთელი ჩინეთი",
+        "🔥 შენ წააგე სახლი",
+        "💥 შენ მოიგე ვადაგასული ნიმესილი",
+        "😔 შენ წააგე შენი ძმა",
+        "🎉 შენ მოიგე საგზური ჯაპანაში",
+        "🎈 შენ მოიგე 2 ლარი",
+      ];
 
-<div class="spinner-overlay" id="spinner">
-  <div class="spinner-box">
-    <div class="spinner-title">დაატრიალე და მოიგე 🎉</div>
+      window.onload = () => {
+        setTimeout(spinWheel, 500);
+      };
 
-    <div class="spinner-pointer"></div>
-    <div class="spinner-wheel" id="wheel"></div>
+      function spinWheel() {
+        const randomDegree = 360 * 5 + Math.floor(Math.random() * 360);
+        const prizeIndex = Math.floor((randomDegree % 360) / 60);
 
-    <div class="spinner-result" id="result"></div>
+        wheel.style.transform = `rotate(${randomDegree}deg)`;
 
-    <button class="spinner-close" onclick="closeSpinner()">
-      დახურვა
-    </button>
-  </div>
-</div>
-<script>
-  const wheel = document.getElementById("wheel");
-  const result = document.getElementById("result");
+        setTimeout(() => {
+          result.textContent = prizes[5 - prizeIndex];
+        }, 4000);
+      }
 
-  const prizes = [
-    "🎁 შენ მოიგე მთელი ჩინეთი",
-    "🔥 შენ წააგე სახლი",
-    "💥 შენ მოიგე ვადაგასული ნიმესილი",
-    "😔 შენ წააგე შენი ძმა",
-    "🎉 შენ მოიგე საგზური ჯაპანაში",
-    "🎈 შენ მოიგე 2 ლარი"
-  ];
-
-  window.onload = () => {
-    setTimeout(spinWheel, 500);
-  };
-
-  function spinWheel() {
-    const randomDegree = 360 * 5 + Math.floor(Math.random() * 360);
-    const prizeIndex = Math.floor((randomDegree % 360) / 60);
-
-    wheel.style.transform = `rotate(${randomDegree}deg)`;
-
-    setTimeout(() => {
-      result.textContent = prizes[5 - prizeIndex];
-    }, 4000);
-  }
-
-  function closeSpinner() {
-    document.getElementById("spinner").style.display = "none";
-  }
-</script>
-
-
-</body>
+      function closeSpinner() {
+        document.getElementById("spinner").style.display = "none";
+      }
+    </script>
+  </body>
 </html>
